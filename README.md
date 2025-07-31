@@ -1,14 +1,20 @@
-# 🚀 Zero Grad Bootcamp Projects
 
-Welcome to the **Zero Grad Bootcamp** repository!  
-This repo contains all the projects and exercises completed during the bootcamp 
+ ## 📚 Zero Grad Bootcamp Projects 
+
+
+<p style="text-align: center;">
+  <img src="https://i.gifer.com/HoUt.gif" alt="GIF" width="80" style="vertical-align: middle; margin-left: 15px;" />
+to the <strong>Zero Grad Bootcamp</strong> repository!<br>
+This repo contains all the projects and exercises completed during the bootcamp.
+</p>
 
 ## 📂 Repository Structure
 - `month-1/` → Projects from the first month.
 
+## 📜 Acknowledgment
+These projects were completed under the guidance of Eng. Ahmad Mostafa,  
+who provided the core ideas and implementation guidance.
 
-
-## 🤝 Contributing
-Feel free to fork the repo and try the projects yourself!
-
-## ⭐ I will add the coming project months, In shaa Allah.
+Special thanks for his valuable time, support, and mentorship.
+ 
+Happy coding! 💻✨
