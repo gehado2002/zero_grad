@@ -11,8 +11,7 @@ def scrap():
         all_specs=[]
         all_occupations=[]
         for num_page in range(num_pages):
-            url=f'https://wuzzuf.net/search/jobs/?a=hpb&q={job_name.replace(" ","%20")}\
-             %20jobs%20in%20egypt&start={num_page}'
+            url = f"https://wuzzuf.net/search/jobs/?a=hpb&q={job_name.replace(' ', '%20')}&start={num_page}"
             response=requests.get(url)
 
             soup=BeautifulSoup(response.content,'lxml')
