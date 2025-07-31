@@ -1,73 +1,64 @@
 import requests
 from bs4 import BeautifulSoup
 import pandas as pd
-import time
 
 def scrap():
-    def web_scraping(job_name, num_pages):
-        all_titles = []
-        all_links = []
-        all_companies = []
-        all_specs = []
-        all_occupations = []
+    def web_scraping(job_name,num_pages):
 
+        all_titles=[]
+        all_links=[]
+        all_companies=[]
+        all_specs=[]
+        all_occupations=[]
         for num_page in range(num_pages):
-            url = f'https://wuzzuf.net/search/jobs/?a=hpb&q={job_name.replace(" ","%20")}&start={num_page}'
+            url=f'https://wuzzuf.net/search/jobs/?a=hpb&q={job_name.replace(" ","%20")}\
+#             %20jobs%20in%20egypt&start={num_page}'
+            response=requests.get(url)
 
-            try:
-                response = requests.get(url, timeout=10)
-                response.raise_for_status()
-            except requests.exceptions.RequestException as e:
-                print(f"Error fetching page {num_page+1} for '{job_name}': {e}")
-                continue
+            soup=BeautifulSoup(response.content,'lxml')
 
-            soup = BeautifulSoup(response.content, 'lxml')
 
-            titles = [title.text.strip() for title in soup.find_all("h2", {"class":"css-m604qf"})]
+            titles=soup.find_all("h2",{"class":"css-m604qf"})
+            titles=[title.text for title in titles]
             all_titles.extend(titles)
 
-            links = [link.a["href"] for link in soup.find_all("div", {"class":"css-pkv5jc"}) if link.a and "href" in link.a.attrs]
+
+            links=soup.find_all("div",{"class":"css-pkv5jc"})
+            links = [link.a["href"] for link in links if link.a and "href" in link.a.attrs]
             all_links.extend(links)
 
-            occupations = [occupation.text.strip() for occupation in soup.find_all("div", {"class":"css-1lh32fc"})]
+
+            occupations=soup.find_all("div",{"class":"css-1lh32fc"})
+            occupations=[occupation.text for occupation in occupations ]
             all_occupations.extend(occupations)
 
-            companies = [company.text.replace(' -','').strip() for company in soup.find_all("a", {"class":"css-17s97q8"})]
+            companies=soup.find_all("a",{"class":"css-17s97q8"})
+            companies=[company.text.replace(' -','') for company in companies]
             all_companies.extend(companies)
 
-            specs = [spec.text.strip() for spec in soup.find_all("div", {"class":"css-y4udm8"})]
+
+            specs=soup.find_all("div",{"class":"css-y4udm8"})
+            specs=[spec.text for spec in specs]
             all_specs.extend(specs)
-
-            print(f"Scraping page {num_page+1} for '{job_name}'...")
-            time.sleep(1)  # تأخير بسيط لتجنب الحظر
-
+            print(f"Scraping data for '{job_name}'...")
         return all_titles, all_links, all_companies, all_specs, all_occupations
 
-    all_jobs_dfs = []
+    for job_name in ["data analysis" , "data science" , "business intelligence"]:
+            titles, links, companies, specs, occupations= web_scraping(job_name, 5)
 
-    for job_name in ["data analysis", "data science", "business intelligence"]:
-        titles, links, companies, specs, occupations = web_scraping(job_name, 5)
+            dic={}
+            dic['titles']=titles
+            dic['links']=links
+            dic['companies']=companies
+            dic['specs']=specs
+            dic['occupations']=occupations
 
-        dic = {
-            'titles': titles,
-            'links': links,
-            'companies': companies,
-            'specs': specs,
-            'occupations': occupations
-        }
+            df = pd.DataFrame.from_dict(dic, orient='index').transpose()
+            df.to_csv(f'{job_name}_jobs_in_egypt.csv',index=False)
+            print(f"🛤️{job_name} jobs scraped successfully\n")
 
-        df = pd.DataFrame.from_dict(dic, orient='index').transpose()
-        df.to_csv(f'{job_name}_jobs_in_egypt.csv', index=False)
-        print(f"🛤️ {job_name} jobs scraped successfully\n")
-
-        all_jobs_dfs.append(df)
-
-    # دمج كل البيانات في ملف واحد كبير
-    final_df = pd.concat(all_jobs_dfs, ignore_index=True)
-    final_df.to_csv("all_jobs_in_egypt.csv", index=False)
-    print("😀 Done. All jobs saved to all_jobs_in_egypt.csv")
-
-    return final_df
+    print("😀Done")
+    return df
 
 if __name__ == "__main__":
     scrap()
