@@ -43,6 +43,8 @@ def scrap():
 
         return all_titles, all_links, all_companies, all_specs, all_occupations
 
+    all_jobs_dfs = []
+
     for job_name in ["data analysis", "data science", "business intelligence"]:
         titles, links, companies, specs, occupations = web_scraping(job_name, 5)
 
@@ -58,8 +60,14 @@ def scrap():
         df.to_csv(f'{job_name}_jobs_in_egypt.csv', index=False)
         print(f"🛤️ {job_name} jobs scraped successfully\n")
 
-    print("😀 Done")
-    return df
+        all_jobs_dfs.append(df)
+
+    # دمج كل البيانات في ملف واحد كبير
+    final_df = pd.concat(all_jobs_dfs, ignore_index=True)
+    final_df.to_csv("all_jobs_in_egypt.csv", index=False)
+    print("😀 Done. All jobs saved to all_jobs_in_egypt.csv")
+
+    return final_df
 
 if __name__ == "__main__":
     scrap()
