@@ -1,19 +1,21 @@
-## 📚 Zero Grad Bootcamp Projects 
+# 📊 Month 2 Projects <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExMmR1b2Uyd3Rwd2NteWlvamgwMDFhNHNxdTVrajdxc2F4cXA4NWJ2NyZlcD12MV9zdGlja2Vyc19zZWFyY2gmY3Q9cw/4CmdB4wGbfZJpdh2GB/giphy.gif" width="120" align="right">
 
-<p style="text-align: center;">
-  <img src="https://i.gifer.com/HoUt.gif" alt="GIF" width="80" style="vertical-align: middle; margin-left: 15px;" />
-  to the <strong>Zero Grad Bootcamp</strong> repository!<br>
-  This repo contains all the projects and exercises completed during the bootcamp.
-</p>
+This folder contains **data analysis and visualization projects** completed during the  
+[**Zero Grad Bootcamp**](https://www.zero-grad.com/), under the guidance of **Eng. Ahmad Mostafa**.
 
-## 📂 Repository Structure
-- `month-1/` → Projects from the first month.
-- `month-2/` → Projects from the second month.
+---
 
-## 📜 Acknowledgment
-These projects were completed under the guidance of **Eng. Ahmad Mostafa**,  
-who provided the core ideas and implementation guidance.
+## 📂 Projects
+- 🚢 [Titanic - Survival Analysis](./Titanic%20EDA)  
 
-Special thanks for his valuable time, support, and mentorship.
- 
-Happy coding! 💻✨
+- 🌍 [World Happiness Report](./World%20Happiness%20EDA)  
+
+- 🍽️ [Zomato Restaurant Analysis](./Zomato%20Restaurants%20EDA)  
+
+---
+
+## 📜 Acknowledgment  
+These projects were completed under the guidance of [**Eng. Ahmad Mostafa**](https://www.linkedin.com/in/ahmadmmostafa/),  
+who provided the project ideas and continuous mentorship.  
+
+**Special thanks for his valuable support and encouragement.**  
