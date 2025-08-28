@@ -59,13 +59,6 @@ The analysis covers data cleaning, feature engineering, visualizations, and regi
 
 ---
 
-## 🚀 Next Steps
-- Apply clustering to group countries by happiness drivers.  
-- Use regression / ML to predict happiness scores.  
-- Compare with 2022/2023 reports for trend analysis.  
-
----
-
 ## 📦 Requirements
 ```bash
 pip install pandas numpy matplotlib seaborn plotly ydata-profiling
