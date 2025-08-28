@@ -7,8 +7,8 @@ The analysis covers data cleaning, feature engineering, visualizations, and regi
 ---
 
 ## 📂 Dataset
-- **Source**: [Kaggle – World Happiness Report 2021](https://www.kaggle.com)  
-- **Shape**: `149 rows × 20 columns` (reduced after preprocessing)  
+- **Source**: [World Happiness Report 2021 dataset on Kaggle](https://www.kaggle.com/datasets/ajaypalsinghlo/world-happiness-report-2021) 
+- **Shape**: `149 rows × 20 columns` (before preprocessing)  
 - **Target Variable**: `Happiness (Ladder Score)`  
 
 ### Main Features:
