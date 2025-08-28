@@ -5,6 +5,15 @@ Exploratory analysis of the Titanic dataset to uncover survival patterns based o
 
 ---
 
+## 📂 Source of Data
+- **Source**: [Kaggle – Titanic: Machine Learning from Disaster](https://www.kaggle.com/competitions/titanic/data)  
+- **Files**:  
+  - `train.csv` → training data with survival labels  
+  - `test.csv` → test data without survival labels  
+  - `gender_submission.csv` → sample submission format  
+
+---
+
 ## 🛠️ Preprocessing
 - Dropped `PassengerId`  
 - Filled missing values (`Embarked`, `Cabin`)  
@@ -43,5 +52,3 @@ Exploratory analysis of the Titanic dataset to uncover survival patterns based o
 - Higher class → higher chance of survival.  
 - Ticket type & cabin location linked to socio-economic status & survival.  
 - Being with family improved survival chances.  
-
-
