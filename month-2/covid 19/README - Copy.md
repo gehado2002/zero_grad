@@ -1,18 +1,39 @@
-# 🐍 Python Mini Projects <img src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExMW8wc296M21yYTRuaGprbDBvZ2k0ZHhreHZxeG05Y3Q2NGg3M3NyMCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/2vnId4IaAjIGZd2EWC/giphy.gif" width="140" align="right">
+# 🦠 COVID-19 Global Analysis & Visualization 📊  
 
-This repository contains **a collection of mini Python projects** I practiced during the  
-[**Zero Grad Bootcamp**](https://www.zero-grad.com/), under the guidance of **Eng. Ahmad Mostafa**.
+## 📌 Overview  
+This project analyzes the **COVID-19 daily global dataset from WHO**, exploring trends in new cases, deaths, cumulative impact, and seasonal/region-wise distributions.  
+The goal is to uncover **pandemic patterns**, visualize global effects, and demonstrate data preprocessing & visualization with **Plotly + Matplotlib**.  
 
-## 📂 Projects
-- 📄 [guessing-game](./guessing-game)
-- ⭕ [tic-tac-toe](./tic-tac-toe)
-- 🌐 [wuzuf-web-scraping](./wuzuf-web-scraping)
-- ☁️ [weather_app_](./weather_app_)
-- 🔤 [guess-the-word](./guess-the-word)
+---
 
-## 📜 Acknowledgment  
+## 📂 Dataset  
+- **Source**: [WHO COVID-19 Global Data](https://covid19.who.int/data)  
+- **Shape**: `491,040 rows × 8 columns`  
+- **Key Variables**:  
+  - 📅 `date_reported` – Daily date of record  
+  - 🌍 `country`, `country_code`, `who_region`  
+  - 🦠 `new_cases`, `cumulative_cases`  
+  - ⚰️ `new_deaths`, `cumulative_deaths`  
 
-These projects were completed under the guidance of [**Eng. Ahmad Mostafa**](https://www.linkedin.com/in/ahmadmmostafa/),  
-who provided the core ideas and implementation guidance.  
+---
 
-**Special thanks for his valuable time, support, and mentorship.**
+## 🛠️ Preprocessing  
+- ✅ Renamed all columns → lowercase, snake_case.  
+- ✅ Missing values in `new_cases` & `new_deaths` handled with **fillna(0)**.  
+- ✅ Converted `date_reported` → `datetime`.  
+- ✅ Added new derived column: **season** (Winter, Spring, Summer, Autumn).  
+
+---
+
+
+## 🚀 Key Findings  
+- **Winter** shows the highest spike in new cases & deaths globally.  
+- Seasonal trends are **consistent across WHO regions** with varying magnitudes.  
+- Data gaps were present (~57% missing in new cases, ~69% missing in new deaths) but imputed with zero.  
+- Pandemic impact varied significantly by region, but all follow similar seasonal peaks.  
+
+---
+
+## 📦 Requirements  
+```bash
+pip install pandas numpy matplotlib plotly kaleido ydata-profiling
