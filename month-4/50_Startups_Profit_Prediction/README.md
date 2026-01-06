@@ -1,8 +1,6 @@
 💰 50 Startups Profit Prediction 📊
-
 📌 Overview
-Prediction of startup profits based on investments in R&D, Administration, Marketing, and State. 
-This project applies an end-to-end workflow including data loading, EDA, preprocessing, feature encoding & scaling, model training, and evaluation.
+Prediction of startup profits based on investments in R&D, Administration, Marketing, and State. End-to-end workflow: data loading, EDA, preprocessing, feature encoding & scaling, model training, and evaluation.
 
 📂 Dataset
 50_Startups.csv – financial data for 50 startups
@@ -18,7 +16,7 @@ This project applies an end-to-end workflow including data loading, EDA, preproc
 50 × 5
 
 📎 Google Colab Notebook:
-[50 Startups Profit Prediction](https://colab.research.google.com/drive/1cSptf6I--WtGcPZG9MlAgvSZ3cDyBBQY?usp=sharing)
+[50 Startups Profit Prediction](https://colab.research.google.com/drive/1cSptf6I--WtGcPZG9MlAgvSZ3cDyBBQY)
 
 🛠️ Preprocessing
 - Train-test split (85% train, 15% test)
@@ -34,8 +32,12 @@ This project applies an end-to-end workflow including data loading, EDA, preproc
 📈 Model Training
 - Linear Regression
 
-```python
-from sklearn.linear_model import LinearRegression
+📊 Model Evaluation
+- R² on training set: 0.953
+- 5-fold Cross-validation: [0.958, 0.962, 0.958, 0.958, 0.870]
+- R² on test set: 0.905
 
-lin_reg = LinearRegression()
-lin_reg.fit(train_features_scaled, train_labels)
+✅ Key Takeaways
+- R&D Spend is the strongest predictor of profit
+- State has minor impact (encoded via OneHotEncoder)
+- Linear Regression provides high accuracy on this dataset
