@@ -7,7 +7,7 @@ The focus is on building a **Deep Learning model** and performing **data preproc
 ---
 
 📎 **Google Colab Notebook:**  
-[Open in Colab](https://colab.research.google.com/drive/YOUR_NOTEBOOK_LINK_HERE)
+[Open in Colab](https://colab.research.google.com/drive/1H2FhX8LcP4lYrCWWjjSlPkfpX2Tb2Q4l?usp=sharing)
 
 ---
 
